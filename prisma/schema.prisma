@@ -9,15 +9,22 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model Issue {
   id          Int      @id @default(autoincrement())
   title       String
   description String
-  status      Int
+  status      Status
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
+}
+
+enum Status {
+  OPEN
+  IN_PROGRESS
+  CLOSED
 }
