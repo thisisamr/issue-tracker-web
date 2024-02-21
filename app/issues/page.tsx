@@ -1,5 +1,7 @@
 "use client";
-import { TextArea, Button, TextField } from "@radix-ui/themes";
+import SimpleMdeReact from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
+import { Button, TextField } from "@radix-ui/themes";
 
 export default function Issues() {
   return (
