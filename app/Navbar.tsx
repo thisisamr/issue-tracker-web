@@ -18,10 +18,9 @@ export default function Navbar() {
         {nav_items.map((i) => (
           <Link
             className={classnames({
-              "text-zinc-500 dark:text-zinc-100": i.href == location,
-              "text-zinc-400": i.href != location,
-              "hover:text-zinc-800  dark:hover:text-zinc-100 transition-colors":
-                true,
+              "text-zinc-500": i.href == location,
+              "text-zinc-700": i.href != location,
+              "hover:text-zinc-900 transition-colors": true,
             })}
             key={i.href}
             href={i.href}
