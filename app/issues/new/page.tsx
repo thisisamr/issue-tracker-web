@@ -1,8 +1,11 @@
 "use client";
 import "easymde/dist/easymde.min.css";
 import { Button, TextField } from "@radix-ui/themes";
-import SimpleMdeReact from "react-simplemde-editor";
+import dynamic from "next/dynamic";
 
+const SimpleMdeReact = dynamic(() => import("react-simplemde-editor"), {
+  ssr: false,
+});
 export default function NewIssuePage() {
   return (
     <div className="max-w-xl space-y-3 p-2">
