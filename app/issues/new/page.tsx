@@ -12,11 +12,17 @@ import axios from "axios";
 import { useState } from "react";
 import { FaCircleInfo } from "react-icons/fa6";
 import { create_issue_schema } from "@/app/ValidationSchemas";
-import {z} from 'zod'
-type IssueForm = z.infer<typeof create_issue_schema>
+import { z } from "zod";
+import ErrorMsg from "@/app/components/ErrorMsg";
+type IssueForm = z.infer<typeof create_issue_schema>;
 export default function NewIssuePage() {
   const router = useRouter();
-  const { register, control, handleSubmit,formState:{errors} } = useForm<IssueForm>({resolver:zodResolver(create_issue_schema)});
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IssueForm>({ resolver: zodResolver(create_issue_schema) });
   const [error, setError] = useState<string>();
   return (
     <div className="max-w-xl p-2">
@@ -45,17 +51,15 @@ export default function NewIssuePage() {
         <TextField.Root>
           <TextField.Input placeholder="title" {...register("title")} />
         </TextField.Root>
-        {errors.title&&<Text color="red" as="p">{errors.title.message}</Text>}
+        <ErrorMsg>{errors.title?.message}</ErrorMsg>
         <Controller
           name="description"
           control={control}
           render={({ field }) => (
-
-            <SimpleMdeReact placeholder="Description" {...field} ref={null}/>
-
+            <SimpleMdeReact placeholder="Description" {...field} ref={null} />
           )}
         />
-        {errors.description&&<Text  color="red" as="p">{errors.description.message}</Text>}
+        <ErrorMsg>{errors.description?.message}</ErrorMsg>
         <Button type="submit">Submit New Issue</Button>
       </form>
     </div>
