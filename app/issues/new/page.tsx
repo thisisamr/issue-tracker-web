@@ -14,6 +14,7 @@ import { FaCircleInfo } from "react-icons/fa6";
 import { create_issue_schema } from "@/app/ValidationSchemas";
 import { z } from "zod";
 import ErrorMsg from "@/app/components/ErrorMsg";
+import Spinner from "@/app/components/spinner";
 type IssueForm = z.infer<typeof create_issue_schema>;
 export default function NewIssuePage() {
   const router = useRouter();
@@ -24,6 +25,7 @@ export default function NewIssuePage() {
     formState: { errors },
   } = useForm<IssueForm>({ resolver: zodResolver(create_issue_schema) });
   const [error, setError] = useState<string>();
+  const [submitting, setSubmitting] = useState(false);
   return (
     <div className="max-w-xl p-2">
       {error && (
@@ -40,10 +42,13 @@ export default function NewIssuePage() {
         className="space-y-3"
         onSubmit={handleSubmit(async (data) => {
           try {
+            setSubmitting(true);
             await axios.post("/api/issues", data);
+            setSubmitting(false);
             router.push("/issues");
           } catch (error) {
             //FIXME:handle error with a toaster
+            setSubmitting(false);
             setError("an unexpected error occured");
           }
         })}
@@ -60,7 +65,10 @@ export default function NewIssuePage() {
           )}
         />
         <ErrorMsg>{errors.description?.message}</ErrorMsg>
-        <Button type="submit">Submit New Issue</Button>
+        <Button disabled={submitting} type="submit">
+          Submit New Issue
+          {submitting && <Spinner />}
+        </Button>
       </form>
     </div>
   );
