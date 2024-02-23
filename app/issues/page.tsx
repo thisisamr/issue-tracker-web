@@ -1,14 +1,49 @@
-"use client";
-import SimpleMdeReact from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
-import { Button, TextField } from "@radix-ui/themes";
+import { Button, Table, TextField } from "@radix-ui/themes";
 import { useRouter } from "next/navigation";
+import prisma from "@/prisma/client";
+import Link from "next/link";
+export default async function Issues() {
+  const issues = await prisma?.issue.findMany({});
 
-export default function Issues() {
-  const router = useRouter()
   return (
     <div className="p-3">
-      <Button onClick={()=>router.push("/issues/new")}>New Issue</Button>
+      <div className="mb-5">
+        <Button>
+          <Link href={"/issues/new"}>New Issue</Link>
+        </Button>
+      </div>
+      <Table.Root variant="surface">
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeaderCell>Isuue</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell className="hidden md:table-cell">
+              Status
+            </Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell className="hidden md:table-cell">
+              Created
+            </Table.ColumnHeaderCell>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {issues?.map((issue) => {
+            return (
+              <Table.Row key={issue.id}>
+                <Table.Cell>
+                  {issue.title}
+                  <div className="block md:hidden">{issue.status}</div>
+                </Table.Cell>
+                <Table.Cell className="hidden md:table-cell ">
+                  {issue.status}
+                </Table.Cell>
+                <Table.Cell className="hidden md:table-cell">
+                  {issue.created_at.toDateString()}
+                </Table.Cell>
+              </Table.Row>
+            );
+          })}
+        </Table.Body>
+      </Table.Root>
     </div>
   );
 }
