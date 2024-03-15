@@ -1,17 +1,17 @@
-import "easymde/dist/easymde.min.css";
-import { Table } from "@radix-ui/themes";
-//import { useRouter } from "next/navigation";
-import prisma from "@/prisma/client";
+import { Button, Table } from "@radix-ui/themes";
+import Link from "next/link";
 import IssueBadge from "../components/IssueBadge";
-import IssueToolbar from "./IssuesToolbar";
-export default async function Issues() {
-
-    const issues = await prisma?.issue.findMany({});
-
-
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css'
+export default function Loading() {
+    let issues = [1, 2, 3, 4, 5]
     return (
         <div className="p-3">
-            <IssueToolbar />
+            <div className="mb-5">
+                <Button>
+                    <Link href={"/issues/new"}>New Issue</Link>
+                </Button>
+            </div>
             <Table.Root variant="surface">
                 <Table.Header>
                     <Table.Row>
@@ -27,18 +27,18 @@ export default async function Issues() {
                 <Table.Body>
                     {issues?.map((issue) => {
                         return (
-                            <Table.Row key={issue.id}>
+                            <Table.Row key={issue}>
                                 <Table.Cell>
-                                    {issue.title}
+                                    <Skeleton />
                                     <div className="block md:hidden">
-                                        <IssueBadge status={issue.status} />
+                                        <Skeleton />
                                     </div>
                                 </Table.Cell>
                                 <Table.Cell className="hidden md:table-cell ">
-                                    <IssueBadge status={issue.status} />
+                                    <Skeleton />
                                 </Table.Cell>
                                 <Table.Cell className="hidden md:table-cell">
-                                    {issue.created_at.toDateString()}
+                                    <Skeleton />
                                 </Table.Cell>
                             </Table.Row>
                         );
@@ -46,5 +46,5 @@ export default async function Issues() {
                 </Table.Body>
             </Table.Root>
         </div>
-    );
+    )
 }
