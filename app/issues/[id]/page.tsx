@@ -23,8 +23,8 @@ export default async function IssueDetailesPage(props: {
           <IssueBadge status={issue.status} />
           <Text>{issue.created_at.toDateString()}</Text>
         </Flex>
-        <Card>
-          <p>{issue.description}</p>
+        <Card className="prose" mt={"4"}>
+          <ReactMarkdown>{issue.description}</ReactMarkdown>
         </Card>
       </div>
     );
