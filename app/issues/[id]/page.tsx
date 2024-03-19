@@ -1,20 +1,20 @@
 import IssueBadge from "@/app/components/IssueBadge";
 import { Card, Flex, Heading, Text } from "@radix-ui/themes";
 import { notFound } from "next/navigation";
-
+import ReactMarkdown from "react-markdown";
+import prisma from "@/prisma/client";
 export default async function IssueDetailesPage(props: {
   params: { id: string };
 }) {
   // if (typeof (props.params.id != "number")) return notFound();
-  try {
-    parseInt(props.params.id);
-  } catch (error) {
+  const n = parseInt(props.params.id);
+  if (isNaN(n)) {
     return notFound();
   }
   let issue = await prisma?.issue.findUnique({
     where: { id: parseInt(props.params.id) },
   });
-  if (!issue) notFound();
+  if (!issue) return notFound();
   else {
     return (
       <div className="m-3">
