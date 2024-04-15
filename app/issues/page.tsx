@@ -1,10 +1,11 @@
 // import "easymde/dist/easymde.min.css";
 import prisma from "@/prisma/client";
 import IssueToolbar from "./IssuesToolbar";
-import { Link ,Table} from "@radix-ui/themes";
-import {IssueLink,IssueBadge} from "@/app/components";
+import { Link, Table } from "@radix-ui/themes";
+import { IssueLink, IssueBadge } from "@/app/components";
+import { Status } from "@prisma/client";
 export default async function Issues() {
-  const issues = await prisma?.issue.findMany({});
+  let issues = await prisma?.issue.findMany({});
 
   return (
     <div className="p-3">
@@ -30,11 +31,11 @@ export default async function Issues() {
                     {issue.title}
                   </IssueLink>
                   <div className="block md:hidden">
-                    <IssueBadge status={issue.status} />
+                    <IssueBadge status={issue.status as Status} />
                   </div>
                 </Table.Cell>
                 <Table.Cell className="hidden md:table-cell ">
-                  <IssueBadge status={issue.status} />
+                  <IssueBadge status={issue.status as Status} />
                 </Table.Cell>
                 <Table.Cell className="hidden md:table-cell">
                   {issue.created_at.toDateString()}
