@@ -8,6 +8,8 @@ import { number } from "zod";
 import Link from "next/link";
 import { Status } from "@prisma/client";
 import { HiOutlinePencil, HiOutlinePencilAlt } from "react-icons/hi";
+import Details from "./Details";
+import EditButton from "./EditButton";
 export default async function IssueDetailesPage(props: {
   params: { id: string };
 }) {
@@ -24,22 +26,8 @@ export default async function IssueDetailesPage(props: {
   else {
     return (
       <Grid className="m-3" columns={{ initial: "1", md: "2" }} gap="5">
-        <Box>
-          <Heading>{issue.title}</Heading>
-          <Flex gap={"3"} my={"2"}>
-            <IssueBadge status={issue.status} />
-            <Text>{issue.created_at.toDateString()}</Text>
-          </Flex>
-          <Card className="prose" mt={"4"}>
-            <ReactMarkdown>{issue.description}</ReactMarkdown>
-          </Card>
-        </Box>
-        <Box>
-          <Button>
-            <HiOutlinePencilAlt />
-            <Link href={`/issues/${issue.id}/edit`}>Edit Issue</Link>
-          </Button>
-        </Box>
+        <Details issue={issue} />
+        <EditButton id={`${issue.id}`} />
       </Grid>
     );
   }
