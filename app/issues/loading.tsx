@@ -1,9 +1,16 @@
+'use client'
+import { Skeleton } from '@/app/components';
 import { Button, Table } from "@radix-ui/themes";
 import Link from "next/link";
-import IssueBadge from "../components/IssueBadge";
-import Skeleton from "react-loading-skeleton";
-import 'react-loading-skeleton/dist/skeleton.css'
+import { usePathname } from 'next/navigation';
+
+
 export default function Loading() {
+    //Fix parent loading duplicate skeleton 
+const p = usePathname()
+if (p=='/issues/new'){
+    return 
+}
     let issues = [1, 2, 3, 4, 5]
     return (
         <div className="p-3">
