@@ -1,21 +1,21 @@
 "use client";
+import { redirect_to_issues_page } from "@/app/actions";
+import {ErrorMsg} from "@/app/components/";
+import Spinner from "@/app/components/spinner";
+import { create_issue_schema } from "@/app/ValidationSchemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button, Callout, TextField } from "@radix-ui/themes";
+import axios from "axios";
+import "easymde/dist/easymde.min.css";
 import dyn from "next/dynamic";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { FaCircleInfo } from "react-icons/fa6";
+import { z } from "zod";
 const SimpleMdeReact = dyn(() => import("react-simplemde-editor"), {
   ssr: false,
 });
-import "easymde/dist/easymde.min.css";
-import { Button, Callout, Text, TextField } from "@radix-ui/themes";
-import { useForm, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
-import axios from "axios";
-import { useState } from "react";
-import { FaCircleInfo } from "react-icons/fa6";
-import { create_issue_schema } from "@/app/ValidationSchemas";
-import { z } from "zod";
-import ErrorMsg from "@/app/components/ErrorMsg";
-import Spinner from "@/app/components/spinner";
-import { redirect_to_issues_page } from "@/app/actions";
 type IssueForm = z.infer<typeof create_issue_schema>;
 export default function NewIssuePage(props: Function) {
   const router = useRouter();

@@ -1,12 +1,8 @@
-import "easymde/dist/easymde.min.css";
-import { Table } from "@radix-ui/themes";
-//import { useRouter } from "next/navigation";
+// import "easymde/dist/easymde.min.css";
 import prisma from "@/prisma/client";
-import IssueBadge from "../components/IssueBadge";
 import IssueToolbar from "./IssuesToolbar";
-//import Link from "next/link";
-import { Link } from "@radix-ui/themes";
-import IssueLink from "../components/IssueLink";
+import { Link ,Table} from "@radix-ui/themes";
+import {IssueLink,IssueBadge} from "@/app/components";
 export default async function Issues() {
   const issues = await prisma?.issue.findMany({});
 
