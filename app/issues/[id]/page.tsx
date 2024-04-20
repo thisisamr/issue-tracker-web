@@ -10,6 +10,7 @@ import { Status } from "@prisma/client";
 import { HiOutlinePencil, HiOutlinePencilAlt } from "react-icons/hi";
 import Details from "./Details";
 import EditButton from "./EditButton";
+import DeleteButton from "./DeleteButton";
 export default async function IssueDetailesPage(props: {
   params: { id: string };
 }) {
@@ -25,9 +26,16 @@ export default async function IssueDetailesPage(props: {
   if (!issue) return notFound();
   else {
     return (
-      <Grid className="m-3" columns={{ initial: "1", md: "2" }} gap="5">
-        <Details issue={issue} />
-        <EditButton id={`${issue.id}`} />
+      <Grid className="m-3" columns={{ initial: "1", sm: "5" }} gap="5">
+        <Box className="md:col-span-4">
+          <Details issue={issue} />
+        </Box>
+        <Box>
+          <Flex direction={"column"} gap={"3"}>
+            <EditButton id={`${issue.id}`} />
+            <DeleteButton id={issue.id} />
+          </Flex>
+        </Box>
       </Grid>
     );
   }
