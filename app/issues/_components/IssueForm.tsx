@@ -14,9 +14,7 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { FaCircleInfo } from "react-icons/fa6";
 import { z } from "zod";
-const SimpleMdeReact = dyn(() => import("react-simplemde-editor"), {
-  ssr: false,
-});
+import SimpleMdeReact from "react-simplemde-editor";
 type IssueForm = z.infer<typeof create_issue_schema>;
 interface Props {
   issue: Issue | null;
