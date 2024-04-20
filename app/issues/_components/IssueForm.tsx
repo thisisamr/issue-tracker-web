@@ -1,7 +1,6 @@
-
 "use client";
 import { redirect_to_issues_page } from "@/app/actions";
-import {ErrorMsg} from "@/app/components/";
+import { ErrorMsg } from "@/app/components/";
 import Spinner from "@/app/components/spinner";
 import { create_issue_schema } from "@/app/ValidationSchemas";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,10 +18,11 @@ const SimpleMdeReact = dyn(() => import("react-simplemde-editor"), {
   ssr: false,
 });
 type IssueForm = z.infer<typeof create_issue_schema>;
-interface Props{
-  issue:Issue | null
+interface Props {
+  issue: Issue | null;
 }
-export default function IssueForm({issue}:Props) {
+
+export default function IssueForm({ issue }: Props) {
   const router = useRouter();
   const {
     register,
@@ -48,12 +48,21 @@ export default function IssueForm({issue}:Props) {
         className="space-y-3"
         onSubmit={handleSubmit(async (data) => {
           try {
-            setSubmitting(true);
-            await axios.post("/api/issues", data);
-            setSubmitting(false);
-            await redirect_to_issues_page("/issues");
-            router.push("/issues");
-            //                        window.location.replace("http://localhost:3000/issues/")
+            if (issue) {
+              setSubmitting(true);
+              await axios.patch("/api/issues/" + issue.id, data);
+              setSubmitting(false);
+              await redirect_to_issues_page("/issues");
+              router.push("/issues");
+              //                        window.location.replace("http://localhost:3000/issues/")
+            } else {
+              setSubmitting(true);
+              await axios.post("/api/issues", data);
+              setSubmitting(false);
+              await redirect_to_issues_page("/issues");
+              router.push("/issues");
+              //                        window.location.replace("http://localhost:3000/issues/")
+            }
           } catch (error) {
             console.log(error);
             //FIXME:handle error with a toaster
@@ -63,11 +72,15 @@ export default function IssueForm({issue}:Props) {
         })}
       >
         <TextField.Root>
-          <TextField.Input defaultValue={issue?.title} placeholder="title" {...register("title")} />
+          <TextField.Input
+            defaultValue={issue?.title}
+            placeholder="title"
+            {...register("title")}
+          />
         </TextField.Root>
         <ErrorMsg>{errors.title?.message}</ErrorMsg>
         <Controller
- defaultValue={issue?.description} 
+          defaultValue={issue?.description}
           name="description"
           control={control}
           render={({ field }) => (
@@ -75,8 +88,8 @@ export default function IssueForm({issue}:Props) {
           )}
         />
         <ErrorMsg>{errors.description?.message}</ErrorMsg>
-        <Button disabled={submitting} type="submit">
-          Submit New Issue
+        <Button disabled={submitting}>
+          {issue ? "Update Issue" : "Submit New Issue"}{" "}
           {submitting && <Spinner />}
         </Button>
       </form>
