@@ -14,7 +14,7 @@ export default function DeleteButton({ id }: { id: number }) {
     <>
       <AlertDialog.Root>
         <AlertDialog.Trigger>
-          <Button className="delete-button" disabled={deleting}>
+          <Button color="ruby" disabled={deleting}>
             Delete Issue
             {deleting && <Spinner />}
           </Button>

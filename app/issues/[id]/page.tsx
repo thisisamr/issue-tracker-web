@@ -13,6 +13,7 @@ import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import Assignee from "./Assignee";
 export default async function IssueDetailesPage(props: {
   params: { id: string };
 }) {
@@ -36,6 +37,7 @@ export default async function IssueDetailesPage(props: {
         </Box>
         {session && <Box>
           <Flex direction={"column"} gap={"3"}>
+            <Assignee />
             <EditButton id={`${issue.id}`} />
             <DeleteButton id={issue.id} />
           </Flex>
