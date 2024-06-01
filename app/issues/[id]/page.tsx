@@ -11,10 +11,14 @@ import { HiOutlinePencil, HiOutlinePencilAlt } from "react-icons/hi";
 import Details from "./Details";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 export default async function IssueDetailesPage(props: {
   params: { id: string };
 }) {
   // if (typeof (props.params.id != "number")) return notFound();
+  const session = await getServerSession(authOptions)
+  console.log(session)
   const n = parseInt(props.params.id);
   if (isNaN(n)) {
     return notFound();
@@ -30,12 +34,12 @@ export default async function IssueDetailesPage(props: {
         <Box className="md:col-span-4">
           <Details issue={issue} />
         </Box>
-        <Box>
+        {session && <Box>
           <Flex direction={"column"} gap={"3"}>
             <EditButton id={`${issue.id}`} />
             <DeleteButton id={issue.id} />
           </Flex>
-        </Box>
+        </Box>}
       </Grid>
     );
   }
