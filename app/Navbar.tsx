@@ -5,9 +5,8 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsBugFill } from "react-icons/bs";
+import Skeleton from "./components/Skeleton";
 export default function Navbar() {
-  const { data: session, status } = useSession()
-  console.log(status, session)
   let nav_items = [
     { label: "Dashboard", href: "/" },
     { label: "Issues", href: "/issues" },
@@ -49,8 +48,10 @@ export default function Navbar() {
 
 const UserAvatar = () => {
   const { status, data: session } = useSession()
+  if (status == 'loading') {
+    return <Skeleton circle width={"1.75rem"} height={"1.75rem"} />
+  }
   return <>
-
     {
       status == 'authenticated' && (<DropdownMenu.Root>
         <DropdownMenu.Trigger>
@@ -63,7 +64,7 @@ const UserAvatar = () => {
           </Text>
           <DropdownMenu.Item>
 
-            {status == 'authenticated' && (<Link href={'/api/auth/signout'}>Singin</Link>)}
+            {status == 'authenticated' && (<Link href={'/api/auth/signout'}>Log out</Link>)}
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>)
