@@ -3,9 +3,9 @@ import "./theme-config.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./Navbar";
 import { Container, Theme, ThemePanel } from "@radix-ui/themes";
 import AuthProvider from "./auth/Provider";
+import Navbar from "./Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
