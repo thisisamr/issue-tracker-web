@@ -1,9 +1,12 @@
 "use client";
 import classnames from "classnames";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsBugFill } from "react-icons/bs";
 export default function Navbar() {
+  const { data: session, status } = useSession()
+  console.log(status, session)
   let nav_items = [
     { label: "Dashboard", href: "/" },
     { label: "Issues", href: "/issues" },
@@ -28,6 +31,8 @@ export default function Navbar() {
             {i.label}
           </Link>
         ))}
+        {status == 'authenticated' && (<Link href={'/api/auth/signout'}>Log out</Link>)}
+        {status == 'unauthenticated' && (<Link href={'/api/auth/signin'}>Singin</Link>)}
       </ul>
     </nav>
   );
