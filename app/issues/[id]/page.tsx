@@ -19,7 +19,6 @@ export default async function IssueDetailesPage(props: {
 }) {
   // if (typeof (props.params.id != "number")) return notFound();
   const session = await getServerSession(authOptions)
-  console.log(session)
   const n = parseInt(props.params.id);
   if (isNaN(n)) {
     return notFound();

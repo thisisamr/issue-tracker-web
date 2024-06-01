@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 export default function LoadingIssueDetails() {
   const p = usePathname();
 
-  console.log(!p.includes("edit"));
   if (!p.includes("edit")) {
     return (
       <Box className="m-3 max-w-xl">
