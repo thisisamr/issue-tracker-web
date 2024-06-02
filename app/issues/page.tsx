@@ -1,10 +1,11 @@
-// import "easymde/dist/easymde.min.css";
 import prisma from "@/prisma/client";
 import IssueToolbar from "./IssuesToolbar";
 import { Link, Table } from "@radix-ui/themes";
+import NextLink from 'next/link'
 import { IssueLink, IssueBadge } from "@/app/components";
-import { Status } from "@prisma/client";
-export default async function Issues({ searchParams }: { searchParams: { status: Status } }) {
+import { Issue, Status } from "@prisma/client";
+import { FaArrowUp } from "react-icons/fa6";
+export default async function Issues({ searchParams }: { searchParams: { status: Status, orderBy: keyof (Issue) } }) {
   const statuses = Object.values(Status);
   const status = statuses.includes(searchParams.status) ? searchParams.status : undefined
   let issues = await prisma?.issue.findMany({
@@ -12,20 +13,27 @@ export default async function Issues({ searchParams }: { searchParams: { status:
       status
     }
   });
-
+  const columns: { label: string, value: keyof Issue, className?: string }[] = [{ label: 'Issue', value: 'title' },
+  { label: "status", value: 'status', className: "hidden md:table-cell" }, { label: 'Created', value: 'created_at', className: 'hidden md:table-cell' }]
   return (
     <div className="p-3">
       <IssueToolbar />
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeaderCell>Isuue</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Status
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Created
-            </Table.ColumnHeaderCell>
+            {columns.map(column => (
+
+              <Table.ColumnHeaderCell key={column.label}>
+                <NextLink href={{
+                  query: {
+                    ...searchParams, orderBy: column.value
+                  }
+                }}>
+                  {column.label}
+                </NextLink>
+                {column.value == searchParams.orderBy && <FaArrowUp className="inline" />}
+              </Table.ColumnHeaderCell>
+            ))}
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -51,6 +59,6 @@ export default async function Issues({ searchParams }: { searchParams: { status:
           })}
         </Table.Body>
       </Table.Root>
-    </div>
+    </div >
   );
 }
