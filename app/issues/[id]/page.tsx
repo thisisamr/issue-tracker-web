@@ -36,7 +36,7 @@ export default async function IssueDetailesPage(props: {
         </Box>
         {session && <Box>
           <Flex direction={"column"} gap={"3"}>
-            <Assignee />
+            <Assignee issue={issue} />
             <EditButton id={`${issue.id}`} />
             <DeleteButton id={issue.id} />
           </Flex>

@@ -1,13 +1,13 @@
 'use client'
 
 import Skeleton from "@/app/components/Skeleton"
-import { User } from "@prisma/client"
+import { Issue, User } from "@prisma/client"
 import { Select } from "@radix-ui/themes"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import { useEffect, useState } from "react"
 
-export default function Assignee() {
+export default function Assignee({ issue }: { issue: Issue }) {
   const { data: users, error, isLoading } = useQuery<User[]>({
     queryKey: ['users'],
     queryFn: () => axios.get('/api/users').then(res => res.data),
@@ -20,7 +20,9 @@ export default function Assignee() {
     return <Skeleton />
   }
   return (
-    <Select.Root>
+    <Select.Root defaultValue={issue.assignedto || ""} onValueChange={(userid) => {
+      axios.patch(`/api/issues/${issue.id}`, { userid: userid.length > 1 ? userid : null })
+    }}>
       <Select.Trigger placeholder="Assign ...">
 
       </Select.Trigger>
@@ -29,6 +31,9 @@ export default function Assignee() {
           <Select.Label>
             Suggestion
           </Select.Label>
+          <Select.Item value=" ">
+            Unassigned
+          </Select.Item>
           {users?.map((user) => {
             return (
               <Select.Item key={user.id} value={user.id}>

@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 export default function LoadingIssues() {
   //Fix parent loading duplicate skeleton
   const p = usePathname();
-  console.log(p);
   if (p == "/issues") {
     let issues = [1, 2, 3, 4, 5];
     return (
