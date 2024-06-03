@@ -3,7 +3,7 @@ import "./theme-config.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Container, Theme, ThemePanel } from "@radix-ui/themes";
+import { Container, Theme } from "@radix-ui/themes";
 import AuthProvider from "./auth/Provider";
 import Navbar from "./Navbar";
 import QueryClientProvider from "./QueryClientProvider";
@@ -31,7 +31,7 @@ export default function RootLayout({
             <AuthProvider>
               <Navbar />
               <main>
-                <Container>{children}</Container>
+                <Container py="3">{children}</Container>
               </main>
             </AuthProvider>
           </Theme>

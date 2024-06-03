@@ -4,7 +4,7 @@ import IssueStatusFilter from "./IssueFilter";
 
 export default function IssueToolbar() {
 
-    return (<Flex mb="5" justify={"between"}>
+    return (<Flex justify={"between"}>
         <IssueStatusFilter />
         <Button>
             <Link href={"/issues/new"}>New Issue</Link>
