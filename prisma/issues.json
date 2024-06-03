@@ -1,0 +1,562 @@
+[
+  {
+    "issueTitle": "Feature request: Dark mode",
+    "issueDescription": "It would be great to have a dark mode option for better readability at night."
+  },
+  {
+    "issueTitle": "Bug: App crashes on startup",
+    "issueDescription": "The application crashes immediately after launching on Windows 10."
+  },
+  {
+    "issueTitle": "Documentation: Missing setup instructions",
+    "issueDescription": "The setup instructions are missing for new users. Please add a section in the README file."
+  },
+  {
+    "issueTitle": "Enhancement: Add search functionality",
+    "issueDescription": "Adding a search bar would improve the user experience by allowing users to quickly find items."
+  },
+  {
+    "issueTitle": "Performance issue: Slow loading times",
+    "issueDescription": "The homepage takes too long to load, especially on mobile devices."
+  },
+  {
+    "issueTitle": "Security vulnerability: SQL injection",
+    "issueDescription": "There is a potential SQL injection vulnerability in the login form."
+  },
+  {
+    "issueTitle": "UI Bug: Overlapping text",
+    "issueDescription": "Text overlaps in the settings menu when the window is resized to a smaller size."
+  },
+  {
+    "issueTitle": "Feature request: Export to CSV",
+    "issueDescription": "Please add an option to export the report data to a CSV file."
+  },
+  {
+    "issueTitle": "Bug: Incorrect calculation in reports",
+    "issueDescription": "The financial reports show incorrect calculations when including discounts."
+  },
+  {
+    "issueTitle": "Enhancement: Multi-language support",
+    "issueDescription": "Consider adding support for multiple languages to cater to a global audience."
+  },
+  {
+    "issueTitle": "Documentation: Add API usage examples",
+    "issueDescription": "The API documentation lacks usage examples. Adding them would help new developers."
+  },
+  {
+    "issueTitle": "Bug: Unable to upload files",
+    "issueDescription": "Users are unable to upload files larger than 10MB. The process fails with a timeout error."
+  },
+  {
+    "issueTitle": "Feature request: Two-factor authentication",
+    "issueDescription": "Adding two-factor authentication would enhance the security of user accounts."
+  },
+  {
+    "issueTitle": "UI Enhancement: Improve button accessibility",
+    "issueDescription": "Buttons need to be more accessible for users with disabilities. Consider increasing size and contrast."
+  },
+  {
+    "issueTitle": "Bug: Notifications not being sent",
+    "issueDescription": "Users are not receiving notifications for new messages."
+  },
+  {
+    "issueTitle": "Performance issue: High CPU usage",
+    "issueDescription": "The application causes high CPU usage, slowing down other processes on the system."
+  },
+  {
+    "issueTitle": "Feature request: Integration with third-party service",
+    "issueDescription": "Please add integration with Service XYZ to streamline workflows."
+  },
+  {
+    "issueTitle": "Bug: Data not syncing",
+    "issueDescription": "Data does not sync across devices when using the mobile app."
+  },
+  {
+    "issueTitle": "Security issue: Password reset vulnerability",
+    "issueDescription": "The password reset functionality is vulnerable to brute force attacks."
+  },
+  {
+    "issueTitle": "UI Bug: Dropdown menu not working",
+    "issueDescription": "The dropdown menu does not open on clicking in the profile settings."
+  },
+  {
+    "issueTitle": "Feature request: Customizable dashboard",
+    "issueDescription": "Allow users to customize their dashboard with widgets and shortcuts."
+  },
+  {
+    "issueTitle": "Bug: Incorrect time zone handling",
+    "issueDescription": "Events show incorrect times for users in different time zones."
+  },
+  {
+    "issueTitle": "Enhancement: Add keyboard shortcuts",
+    "issueDescription": "Implement keyboard shortcuts for common actions to improve productivity."
+  },
+  {
+    "issueTitle": "Documentation: Update API endpoints",
+    "issueDescription": "The API documentation lists outdated endpoints. Please update them to reflect the current version."
+  },
+  {
+    "issueTitle": "Bug: Form validation errors",
+    "issueDescription": "Form validation errors are not displayed properly, causing confusion for users."
+  },
+  {
+    "issueTitle": "Feature request: Offline mode",
+    "issueDescription": "Enable an offline mode that allows users to access and edit data without an internet connection."
+  },
+  {
+    "issueTitle": "UI Bug: Misaligned icons",
+    "issueDescription": "Icons are misaligned on the toolbar when viewed on smaller screens."
+  },
+  {
+    "issueTitle": "Bug: Incorrect user permissions",
+    "issueDescription": "Users are able to access restricted areas of the application without proper permissions."
+  },
+  {
+    "issueTitle": "Performance issue: Memory leak",
+    "issueDescription": "The application has a memory leak that causes it to consume excessive memory over time."
+  },
+  {
+    "issueTitle": "Feature request: Support for custom themes",
+    "issueDescription": "Allow users to create and apply custom themes to personalize the interface."
+  },
+  {
+    "issueTitle": "Bug: Search results not updating",
+    "issueDescription": "Search results do not update immediately after adding new items."
+  },
+  {
+    "issueTitle": "Enhancement: Better error messages",
+    "issueDescription": "Improve error messages to provide more detail and guidance for users."
+  },
+  {
+    "issueTitle": "Bug: Inconsistent date formats",
+    "issueDescription": "Dates are displayed in different formats across the application. Please standardize the date format."
+  },
+  {
+    "issueTitle": "Feature request: Multi-user collaboration",
+    "issueDescription": "Add features that allow multiple users to collaborate on the same project in real-time."
+  },
+  {
+    "issueTitle": "UI Bug: Modal window not closing",
+    "issueDescription": "The modal window does not close when clicking the 'X' button in the top right corner."
+  },
+  {
+    "issueTitle": "Bug: Missing translations",
+    "issueDescription": "Some parts of the application are not translated into the selected language."
+  },
+  {
+    "issueTitle": "Performance issue: Slow database queries",
+    "issueDescription": "Certain database queries take too long to execute, slowing down the application."
+  },
+  {
+    "issueTitle": "Feature request: Add webhook support",
+    "issueDescription": "Implement webhook support to allow integration with external systems."
+  },
+  {
+    "issueTitle": "Bug: Image upload fails on mobile",
+    "issueDescription": "Image uploads fail when using the mobile version of the application."
+  },
+  {
+    "issueTitle": "Enhancement: Improve mobile responsiveness",
+    "issueDescription": "Enhance the mobile version of the application to be more responsive and user-friendly."
+  },
+  {
+    "issueTitle": "Security issue: Unencrypted data storage",
+    "issueDescription": "Sensitive data is being stored unencrypted. This poses a security risk."
+  },
+  {
+    "issueTitle": "UI Bug: Button hover state not working",
+    "issueDescription": "The button hover state does not change when hovering over buttons in the main menu."
+  },
+  {
+    "issueTitle": "Bug: Session timeout not handled",
+    "issueDescription": "Users are not redirected to the login page after their session times out."
+  },
+  {
+    "issueTitle": "Feature request: PDF export",
+    "issueDescription": "Add functionality to export reports and documents as PDF files."
+  },
+  {
+    "issueTitle": "Bug: Incorrect pagination",
+    "issueDescription": "Pagination does not work correctly on the search results page."
+  },
+  {
+    "issueTitle": "Enhancement: Add audit logs",
+    "issueDescription": "Implement audit logging to track changes and actions taken by users."
+  },
+  {
+    "issueTitle": "Bug: Duplicate entries in list",
+    "issueDescription": "The application shows duplicate entries in the list view after refreshing."
+  },
+  {
+    "issueTitle": "Feature request: Custom fields",
+    "issueDescription": "Allow users to add custom fields to forms and reports."
+  },
+  {
+    "issueTitle": "Bug: Incorrect sorting order",
+    "issueDescription": "Items are not sorted correctly by date in the activity feed."
+  },
+  {
+    "issueTitle": "Enhancement: Add dark mode toggle",
+    "issueDescription": "Provide a toggle switch to enable or disable dark mode."
+  },
+  {
+    "issueTitle": "Security issue: Cross-site scripting (XSS)",
+    "issueDescription": "The application is vulnerable to cross-site scripting attacks. Input fields need proper sanitization."
+  },
+  {
+    "issueTitle": "Bug: Unable to save settings",
+    "issueDescription": "Settings changes are not saved and are reverted to default after refreshing the page."
+  },
+  {
+    "issueTitle": "Feature request: SSO integration",
+    "issueDescription": "Implement single sign-on (SSO) integration to streamline user authentication."
+  },
+  {
+    "issueTitle": "Bug: Broken link in footer",
+    "issueDescription": "The link to the privacy policy in the footer is broken and leads to a 404 page."
+  },
+  {
+    "issueTitle": "Enhancement: Add user activity feed",
+    "issueDescription": "Add an activity feed to display recent actions and updates by users."
+  },
+  {
+    "issueTitle": "Bug: Notification bell not working",
+    "issueDescription": "The notification bell icon does not show new notifications."
+  },
+  {
+    "issueTitle": "Feature request: Scheduled tasks",
+    "issueDescription": "Add functionality to schedule tasks and reminders within the application."
+  },
+  {
+    "issueTitle": "Bug: Profile picture upload fails",
+    "issueDescription": "Users are unable to upload or change their profile pictures."
+  },
+  {
+    "issueTitle": "Enhancement: Add tooltips",
+    "issueDescription": "Add tooltips to buttons and icons to provide additional information and improve usability."
+  },
+  {
+    "issueTitle": "Bug: Incorrect item count",
+    "issueDescription": "The item count displayed on the dashboard does not match the actual number of items."
+  },
+  {
+    "issueTitle": "Feature request: Bulk actions",
+    "issueDescription": "Enable bulk actions for managing multiple items at once, such as bulk delete or update."
+  },
+  {
+    "issueTitle": "Bug: Form reset not working",
+    "issueDescription": "The reset button in forms does not clear the fields as expected."
+  },
+  {
+    "issueTitle": "Enhancement: Add user roles",
+    "issueDescription": "Implement user roles and permissions to control access to different parts of the application."
+  },
+  {
+    "issueTitle": "Bug: Inconsistent font sizes",
+    "issueDescription": "Font sizes are inconsistent across different sections of the application."
+  },
+  {
+    "issueTitle": "Feature request: Email notifications",
+    "issueDescription": "Send email notifications for important events and updates within the application."
+  },
+  {
+    "issueTitle": "Bug: Unable to delete items",
+    "issueDescription": "Users are unable to delete items from their list. The delete action fails silently."
+  },
+  {
+    "issueTitle": "Enhancement: Add support for tags",
+    "issueDescription": "Allow users to add and manage tags for better organization of items."
+  },
+  {
+    "issueTitle": "Bug: Incorrect time display",
+    "issueDescription": "Time is displayed incorrectly in the activity log. It appears to be off by several hours."
+  },
+  {
+    "issueTitle": "Feature request: Real-time updates",
+    "issueDescription": "Implement real-time updates to reflect changes immediately without requiring a page refresh."
+  },
+  {
+    "issueTitle": "Bug: Sidebar menu not expanding",
+    "issueDescription": "The sidebar menu does not expand when clicking on the sections."
+  },
+  {
+    "issueTitle": "Enhancement: Improve loading spinner",
+    "issueDescription": "The loading spinner is barely visible. Consider using a more prominent spinner."
+  },
+  {
+    "issueTitle": "Bug: Data export failure",
+    "issueDescription": "Exporting data as CSV fails with an error message. The issue occurs intermittently."
+  },
+  {
+    "issueTitle": "Enhancement: Add user activity feed",
+    "issueDescription": "Add an activity feed to display recent actions and updates by users."
+  },
+  {
+    "issueTitle": "Bug: Notification bell not working",
+    "issueDescription": "The notification bell icon does not show new notifications."
+  },
+  {
+    "issueTitle": "Feature request: Scheduled tasks",
+    "issueDescription": "Add functionality to schedule tasks and reminders within the application."
+  },
+  {
+    "issueTitle": "Bug: Profile picture upload fails",
+    "issueDescription": "Users are unable to upload or change their profile pictures."
+  },
+  {
+    "issueTitle": "Enhancement: Add tooltips",
+    "issueDescription": "Add tooltips to buttons and icons to provide additional information and improve usability."
+  },
+  {
+    "issueTitle": "Bug: Incorrect item count",
+    "issueDescription": "The item count displayed on the dashboard does not match the actual number of items."
+  },
+  {
+    "issueTitle": "Feature request: Bulk actions",
+    "issueDescription": "Enable bulk actions for managing multiple items at once, such as bulk delete or update."
+  },
+  {
+    "issueTitle": "Bug: Form reset not working",
+    "issueDescription": "The reset button in forms does not clear the fields as expected."
+  },
+  {
+    "issueTitle": "Enhancement: Add user roles",
+    "issueDescription": "Implement user roles and permissions to control access to different parts of the application."
+  },
+  {
+    "issueTitle": "Bug: Inconsistent font sizes",
+    "issueDescription": "Font sizes are inconsistent across different sections of the application."
+  },
+  {
+    "issueTitle": "Feature request: Email notifications",
+    "issueDescription": "Send email notifications for important events and updates within the application."
+  },
+  {
+    "issueTitle": "Bug: Unable to delete items",
+    "issueDescription": "Users are unable to delete items from their list. The delete action fails silently."
+  },
+  {
+    "issueTitle": "Enhancement: Add support for tags",
+    "issueDescription": "Allow users to add and manage tags for better organization of items."
+  },
+  {
+    "issueTitle": "Bug: Incorrect time display",
+    "issueDescription": "Time is displayed incorrectly in the activity log. It appears to be off by several hours."
+  },
+  {
+    "issueTitle": "Feature request: Real-time updates",
+    "issueDescription": "Implement real-time updates to reflect changes immediately without requiring a page refresh."
+  },
+  {
+    "issueTitle": "Bug: Sidebar menu not expanding",
+    "issueDescription": "The sidebar menu does not expand when clicking on the sections."
+  },
+  {
+    "issueTitle": "Enhancement: Improve loading spinner",
+    "issueDescription": "The loading spinner is barely visible. Consider using a more prominent spinner."
+  },
+  {
+    "issueTitle": "Bug: Data export failure",
+    "issueDescription": "Exporting data as CSV fails with an error message. The issue occurs intermittently."
+  },
+  {
+    "issueTitle": "Feature request: Support for webhooks",
+    "issueDescription": "Add support for webhooks to notify external systems of events happening within the application."
+  },
+  {
+    "issueTitle": "Bug: Tooltip not disappearing",
+    "issueDescription": "Tooltips do not disappear after moving the mouse away from the icon."
+  },
+  {
+    "issueTitle": "Enhancement: Add activity logs",
+    "issueDescription": "Add logs to track user activities and actions within the application for better monitoring."
+  },
+  {
+    "issueTitle": "Bug: Search bar autofocus",
+    "issueDescription": "The search bar does not automatically focus when the search page is opened."
+  },
+  {
+    "issueTitle": "Feature request: Data import",
+    "issueDescription": "Provide an option to import data from CSV files to streamline the onboarding process."
+  },
+  {
+    "issueTitle": "Bug: Incorrect form submission",
+    "issueDescription": "Form submission fails with a validation error even when all required fields are filled."
+  },
+  {
+    "issueTitle": "Enhancement: Improve onboarding",
+    "issueDescription": "Enhance the onboarding process with guided tours and tooltips to help new users get started."
+  },
+  {
+    "issueTitle": "Bug: Missing icons",
+    "issueDescription": "Icons are missing from the toolbar when viewed in Firefox."
+  },
+  {
+    "issueTitle": "Feature request: Customizable reports",
+    "issueDescription": "Allow users to create and save customizable reports with selected metrics and filters."
+  },
+  {
+    "issueTitle": "Bug: Incorrect user count",
+    "issueDescription": "The user count on the admin dashboard is incorrect. It does not match the number of registered users."
+  },
+  {
+    "issueTitle": "Enhancement: Add data visualization",
+    "issueDescription": "Add charts and graphs to visualize data trends and insights within the application."
+  },
+  {
+    "issueTitle": "Bug: Auto-save not working",
+    "issueDescription": "Auto-save functionality does not work consistently, causing users to lose their work."
+  },
+  {
+    "issueTitle": "Feature request: Custom notifications",
+    "issueDescription": "Allow users to create custom notification rules based on specific events and triggers."
+  },
+  {
+    "issueTitle": "Bug: Incorrect file type error",
+    "issueDescription": "Uploading certain file types results in an 'incorrect file type' error even when the file is supported."
+  },
+  {
+    "issueTitle": "Enhancement: Improve search accuracy",
+    "issueDescription": "Enhance the search algorithm to improve accuracy and relevance of search results."
+  },
+  {
+    "issueTitle": "Bug: Layout issues on Safari",
+    "issueDescription": "Layout issues occur when the application is accessed using the Safari browser."
+  },
+  {
+    "issueTitle": "Feature request: Data backup",
+    "issueDescription": "Implement a data backup feature to allow users to backup and restore their data."
+  },
+  {
+    "issueTitle": "Bug: Checkbox state not saving",
+    "issueDescription": "The state of checkboxes is not saved when the form is submitted."
+  },
+  {
+    "issueTitle": "Enhancement: Add custom avatars",
+    "issueDescription": "Allow users to upload and use custom avatars in their profile."
+  },
+  {
+    "issueTitle": "Bug: Pagination controls not visible",
+    "issueDescription": "Pagination controls are not visible on smaller screens, making it difficult to navigate through pages."
+  },
+  {
+    "issueTitle": "Feature request: Multi-factor authentication",
+    "issueDescription": "Add support for multi-factor authentication to enhance account security."
+  },
+  {
+    "issueTitle": "Bug: Session expiration not handled",
+    "issueDescription": "Users are not properly logged out when their session expires, leading to potential security risks."
+  },
+  {
+    "issueTitle": "Enhancement: Add language selection",
+    "issueDescription": "Add a language selection dropdown to allow users to choose their preferred language."
+  },
+  {
+    "issueTitle": "Bug: Incorrect item details",
+    "issueDescription": "Item details displayed in the summary view do not match the details in the detail view."
+  },
+  {
+    "issueTitle": "Feature request: Custom email templates",
+    "issueDescription": "Allow administrators to create and use custom email templates for notifications."
+  },
+  {
+    "issueTitle": "Feature request: Support for webhooks",
+    "issueDescription": "Add support for webhooks to notify external systems of events happening within the application."
+  },
+  {
+    "issueTitle": "Bug: Tooltip not disappearing",
+    "issueDescription": "Tooltips do not disappear after moving the mouse away from the icon."
+  },
+  {
+    "issueTitle": "Enhancement: Add activity logs",
+    "issueDescription": "Add logs to track user activities and actions within the application for better monitoring."
+  },
+  {
+    "issueTitle": "Bug: Search bar autofocus",
+    "issueDescription": "The search bar does not automatically focus when the search page is opened."
+  },
+  {
+    "issueTitle": "Feature request: Data import",
+    "issueDescription": "Provide an option to import data from CSV files to streamline the onboarding process."
+  },
+  {
+    "issueTitle": "Bug: Incorrect form submission",
+    "issueDescription": "Form submission fails with a validation error even when all required fields are filled."
+  },
+  {
+    "issueTitle": "Enhancement: Improve onboarding",
+    "issueDescription": "Enhance the onboarding process with guided tours and tooltips to help new users get started."
+  },
+  {
+    "issueTitle": "Bug: Missing icons",
+    "issueDescription": "Icons are missing from the toolbar when viewed in Firefox."
+  },
+  {
+    "issueTitle": "Feature request: Customizable reports",
+    "issueDescription": "Allow users to create and save customizable reports with selected metrics and filters."
+  },
+  {
+    "issueTitle": "Bug: Incorrect user count",
+    "issueDescription": "The user count on the admin dashboard is incorrect. It does not match the number of registered users."
+  },
+  {
+    "issueTitle": "Enhancement: Add data visualization",
+    "issueDescription": "Add charts and graphs to visualize data trends and insights within the application."
+  },
+  {
+    "issueTitle": "Bug: Auto-save not working",
+    "issueDescription": "Auto-save functionality does not work consistently, causing users to lose their work."
+  },
+  {
+    "issueTitle": "Feature request: Custom notifications",
+    "issueDescription": "Allow users to create custom notification rules based on specific events and triggers."
+  },
+  {
+    "issueTitle": "Bug: Incorrect file type error",
+    "issueDescription": "Uploading certain file types results in an 'incorrect file type' error even when the file is supported."
+  },
+  {
+    "issueTitle": "Enhancement: Improve search accuracy",
+    "issueDescription": "Enhance the search algorithm to improve accuracy and relevance of search results."
+  },
+  {
+    "issueTitle": "Bug: Layout issues on Safari",
+    "issueDescription": "Layout issues occur when the application is accessed using the Safari browser."
+  },
+  {
+    "issueTitle": "Feature request: Data backup",
+    "issueDescription": "Implement a data backup feature to allow users to backup and restore their data."
+  },
+  {
+    "issueTitle": "Bug: Checkbox state not saving",
+    "issueDescription": "The state of checkboxes is not saved when the form is submitted."
+  },
+  {
+    "issueTitle": "Enhancement: Add custom avatars",
+    "issueDescription": "Allow users to upload and use custom avatars in their profile."
+  },
+  {
+    "issueTitle": "Bug: Pagination controls not visible",
+    "issueDescription": "Pagination controls are not visible on smaller screens, making it difficult to navigate through pages."
+  },
+  {
+    "issueTitle": "Feature request: Multi-factor authentication",
+    "issueDescription": "Add support for multi-factor authentication to enhance account security."
+  },
+  {
+    "issueTitle": "Bug: Session expiration not handled",
+    "issueDescription": "Users are not properly logged out when their session expires, leading to potential security risks."
+  },
+  {
+    "issueTitle": "Enhancement: Add language selection",
+    "issueDescription": "Add a language selection dropdown to allow users to choose their preferred language."
+  },
+  {
+    "issueTitle": "Bug: Incorrect item details",
+    "issueDescription": "Item details displayed in the summary view do not match the details in the detail view."
+  },
+  {
+    "issueTitle": "Feature request: Custom email templates",
+    "issueDescription": "Allow administrators to create and use custom email templates for notifications."
+  }
+]

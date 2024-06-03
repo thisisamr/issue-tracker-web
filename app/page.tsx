@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div>hello world</div>
+import Pagination from "./components/Pagination";
+
+export default function Home({ searchParams }: { searchParams: { page: string } }) {
+  return <>hello</>
 }

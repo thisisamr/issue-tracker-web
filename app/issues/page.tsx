@@ -5,17 +5,28 @@ import NextLink from 'next/link'
 import { IssueLink, IssueBadge } from "@/app/components";
 import { Issue, Status } from "@prisma/client";
 import { FaArrowUp } from "react-icons/fa6";
-export default async function Issues({ searchParams }: { searchParams: { status: Status, orderBy: keyof (Issue) } }) {
+import Pagination from "../components/Pagination";
+export default async function Issues({ searchParams }: { searchParams: { status: Status, orderBy: keyof (Issue), page: string } }) {
+
   const columns: { label: string, value: keyof Issue, className?: string }[] = [{ label: 'Issue', value: 'title' },
-  { label: "status", value: 'status', className: "hidden md:table-cell" }, { label: 'Created', value: 'created_at', className: 'hidden md:table-cell' }]
+  { label: "status", value: 'status', className: "hidden md:table-cell" }, { label: 'Created', value: 'created_at', className: 'hidden md:table-cell' }];
+
   const statuses = Object.values(Status);
   const status = statuses.includes(searchParams.status) ? searchParams.status : undefined
   const orderBy = columns.map(column => column.value).includes(searchParams.orderBy) ? { [searchParams.orderBy]: 'asc' } : undefined
+  const pageSize = 10;
+  const _page = parseInt(searchParams.page) || 1
   let issues = await prisma?.issue.findMany({
     where: {
       status
-    }, orderBy
+    }, orderBy, skip: (_page - 1) * pageSize, take: pageSize
   });
+
+  let count = await prisma.issue.count({
+    where: {
+      status
+    }, orderBy
+  })
   return (
     <div className="p-3">
       <IssueToolbar />
@@ -60,6 +71,7 @@ export default async function Issues({ searchParams }: { searchParams: { status:
           })}
         </Table.Body>
       </Table.Root>
+      <Pagination pageSize={pageSize} currentPage={_page} itemCount={count} />
     </div >
   );
 }
