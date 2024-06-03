@@ -14,17 +14,18 @@ import DeleteButton from "./DeleteButton";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Assignee from "./Assignee";
-export default async function IssueDetailesPage(props: {
+interface Props {
   params: { id: string };
-}) {
+}
+export default async function IssueDetailesPage({ params }: Props) {
   // if (typeof (props.params.id != "number")) return notFound();
-  const session = await getServerSession(authOptions)
-  const n = parseInt(props.params.id);
+  const session = await getServerSession(authOptions);
+  const n = parseInt(params.id);
   if (isNaN(n)) {
     return notFound();
   }
   let issue = await prisma?.issue.findUnique({
-    where: { id: parseInt(props.params.id) },
+    where: { id: parseInt(params.id) },
   });
 
   if (!issue) return notFound();
@@ -34,14 +35,26 @@ export default async function IssueDetailesPage(props: {
         <Box className="md:col-span-4">
           <Details issue={issue} />
         </Box>
-        {session && <Box>
-          <Flex direction={"column"} gap={"3"}>
-            <Assignee issue={issue} />
-            <EditButton id={`${issue.id}`} />
-            <DeleteButton id={issue.id} />
-          </Flex>
-        </Box>}
+        {session && (
+          <Box>
+            <Flex direction={"column"} gap={"3"}>
+              <Assignee issue={issue} />
+              <EditButton id={`${issue.id}`} />
+              <DeleteButton id={issue.id} />
+            </Flex>
+          </Box>
+        )}
       </Grid>
     );
   }
+}
+
+export async function generateMetadata({ params }: Props) {
+  const issue = await prisma.issue.findUnique({
+    where: { id: parseInt(params.id) },
+  });
+  return {
+    title: issue?.title,
+    description: issue?.description,
+  };
 }
