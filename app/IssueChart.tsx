@@ -7,7 +7,7 @@ interface Props {
   inProgress: number;
   closed: number;
 }
-export default async function IssueChart({ open, inProgress, closed }: Props) {
+export default function IssueChart({ open, inProgress, closed }: Props) {
   const data = [
     { label: "Open", value: open },
     { label: "Closed", value: closed },

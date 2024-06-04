@@ -12,9 +12,9 @@ import Details from "./Details";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Assignee from "./Assignee";
 import { cache } from "react";
+import { authOptions } from "@/lib";
 interface Props {
   params: { id: string };
 }
