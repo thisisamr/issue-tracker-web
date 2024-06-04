@@ -34,8 +34,8 @@ export default function DeleteButton({ id }: { id: number }) {
             </AlertDialog.Cancel>
             <AlertDialog.Action>
               <Button
+                className="delete-button"
                 variant="solid"
-                color="red"
                 onClick={async () => {
                   try {
                     setDeleting(true);
