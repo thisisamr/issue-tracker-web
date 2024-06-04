@@ -2,9 +2,9 @@ import { Flex, Grid } from "@radix-ui/themes";
 import IssueChart from "./IssueChart";
 import IssueSummary from "./IssueSummary";
 import LatestIssues from "./LatestIssues";
-import Pagination from "./components/Pagination";
 import prisma from "@/prisma/client";
 import { Metadata } from "next";
+export const dynamic = "force-dynamic";
 export default async function Home() {
   const closed = await prisma.issue.count({
     where: {
